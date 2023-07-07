@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBC LAB REPORT COVID DETECTOR </title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h2 class="card-heading">
+                    CBC LAB REPORT COVID DETECTOR
+                    DESIGNED BY : KHALID ABDUL BASSET
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <input name="Age" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label"> AGE : from zero to hundred</label>
+                </div>
+                            <div class="input">
+                    <input name="Gender" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Gender : one for Male and Zero for female</label>
+                </div>
+                            <div class="input">
+                    <input name="Antibiotics" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Antibiotics : one for YES and Zero for NO</label>
+                </div>
+                <div class="input">
+                    <input name="Paracetamol" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Paracetamol : one for YES and Zero for NO</label>
+                </div>
+                 <div class="input">
+                    <input name="oxygen" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">oxygen : one for YES and Zero for NO</label>
+                </div>
+                 <div class="input">
+                    <input name="Ventilated" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Ventilated : one for YES and Zero for NO</label>
+                </div>
+                 <div class="input">
+                    <input name="Red blood cell distribution width" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Red blood cell distribution width : zero to 100</label>
+                </div>
+                 <div class="input">
+                    <input name="Monocytes" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Monocytes(%) : zero to 100</label>
+                </div>
+                 <div class="input">
+                    <input name="White blood cell count" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">White blood cell count : zero to 100</label>
+                </div>
+                 <div class="input">
+                    <input name="Platelet Count" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Platelet Count : 100 to 700,where: 100=100,000</label>
+                </div>
+                 <div class="input">
+                    <input name="Lymphocyte Count" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Lymphocyte Count: 1 to 10, where: 1=10%</label>
+                </div>
+                <div class="input">
+                    <input name="Neutrophils Count" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Neutrophils Count(%) : 1 to 100</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+		<img src="{{ image }}" alt="{{ prediction }}">
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
